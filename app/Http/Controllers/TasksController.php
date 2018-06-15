@@ -135,11 +135,10 @@ class TasksController extends Controller
      */
     public function destroy($id)
     {
+        $task = \App\Task::find($id);
         if (\Auth::user()->id === $task->user_id) {
-              $task = Task::find($id);
               $task->delete();
         }
-
 
         return redirect('/');
     }
