@@ -16,7 +16,6 @@ class TasksController extends Controller
     public function index()
     {
         if (\Auth::check()) {
-        echo "TasksController - index 1";
             $user = \Auth::user();
             $tasks = $user->tasks()->orderBy('created_at', 'desc' )->paginate(10);
             
@@ -25,7 +24,6 @@ class TasksController extends Controller
             ]);
         }
         else {
-        echo "TasksController - index 2";
             return view('welcome');
         }
     }
