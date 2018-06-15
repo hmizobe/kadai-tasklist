@@ -29,6 +29,7 @@ class TasksController extends Controller
         echo "TasksController - index 2";
         exit;
             return view('welcome');
+        }
     }
 
     /**
